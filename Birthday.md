@@ -65,19 +65,19 @@ $$
 $$
 For case II, the probability is
 $$
-\frac{q}{d+q}\times\frac{d}{d+q}\times\frac{d-1}{d+q}\times\cdots\times\frac{d-n+2}{d+q}=\frac{d!\times q}{(d-n+1)!(d+q)^{n}}=\frac{P_{d,n-1}\times q}{(d+q)^{n}} .
+\frac{nq}{d+q}\times\frac{d}{d+q}\times\frac{d-1}{d+q}\times\cdots\times\frac{d-n+2}{d+q}=\frac{d!\times nq}{(d-n+1)!(d+q)^{n}}=\frac{P_{d,n-1}\times nq}{(d+q)^{n}} .
 $$
 
 
 Thus, the probability that at least 2 persons were born on the same day is:
 $$
 \begin{aligned}
-1-\frac{P_{d,n}}{(d+q)^{n}}-\frac{P_{d,n-1}\times q}{(d+q)^{n}} = \frac{(d+q)^n-(d-n+2)\times P_{d,n-1}}{(d+q)^n}
+1-\frac{P_{d,n}}{(d+q)^{n}}-\frac{P_{d,n-1}\times nq}{(d+q)^{n}} = \frac{(d+q)^n-(d-n+nq+1)\times P_{d,n-1}}{(d+q)^n}
 \end{aligned}
 $$
 For instance, assuming the leap year occurs quadrennially (ignoring special years like 1900), q is equal to 0.25 and d is 365. The probability that no birthday collision occurs in a group of size n is 
 $$
-P(n,365) = \frac{(365.25)^n-(367-n)\times P_{365,n-1}}{(365.25)^n}
+P(n,365) = \frac{(365.25)^n-(366-n+nq)\times P_{365,n-1}}{(365.25)^n}
 $$
-When n=23, the probability that birthday collision occurs is 51.36%, which is a little higher than the uniform case.
+When n=23, the probability that birthday collision occurs is 50.69%, which is slightly lower than the uniform case.
 
