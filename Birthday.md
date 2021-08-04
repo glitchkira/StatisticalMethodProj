@@ -49,10 +49,35 @@ $$
 
 ## 2.2 Leap Year Case
 
-Consider the case that a special day (e.g. Feb. 29) does not exist in every year, the probability that one born in this special day is q.
+Consider the case that a special day (for instance, Feb. 29) does not exist in every year, the probability that the special day exist in a random year is q.
 
 To calculate the coincident probability for a group of size n, divide the event into 2 cases:
 
 Case I:  the n persons were born on n different days other than the special day.
 
 Case II: the n persons were born on n different days, including one was born on the special day.
+
+The probability that one was born in the special day is $q/(d+q)$, while one was born in a normal day rather than the special day is $1/(d+q)$, where d is the number of days a regular year has.
+
+For case I, the probability is
+$$
+\frac{d}{d+q}\times\frac{d-1}{d+q}\times\cdots\times\frac{d-n+1}{d+q}=\frac{d!}{(d-n)!(d+q)^{n}}=\frac{P_{d,n}}{(d+q)^{n}} .
+$$
+For case II, the probability is
+$$
+\frac{q}{d+q}\times\frac{d}{d+q}\times\frac{d-1}{d+q}\times\cdots\times\frac{d-n+2}{d+q}=\frac{d!\times q}{(d-n+1)!(d+q)^{n}}=\frac{P_{d,n-1}\times q}{(d+q)^{n}} .
+$$
+
+
+Thus, the probability that at least 2 persons were born on the same day is:
+$$
+\begin{aligned}
+1-\frac{P_{d,n}}{(d+q)^{n}}-\frac{P_{d,n-1}\times q}{(d+q)^{n}} = \frac{(d+q)^n-(d-n+2)\times P_{d,n-1}}{(d+q)^n}
+\end{aligned}
+$$
+For instance, assuming the leap year occurs quadrennially (ignoring special years like 1900), q is equal to 0.25 and d is 365. The probability that no birthday collision occurs in a group of size n is 
+$$
+P(n,365) = \frac{(365.25)^n-(367-n)\times P_{365,n-1}}{(365.25)^n}
+$$
+When n=23, the probability that birthday collision occurs is 51.36%, which is a little higher than the uniform case.
+
