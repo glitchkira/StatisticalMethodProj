@@ -29,4 +29,30 @@ In this section, we will generalize the birthday problem to wider conditions. He
 
 ### 2.1 Birthday Problem  with Arbitrary Days
 
-Considering a planet other than the earth, whose revolution cycle is N.
+Considering a planet other than the earth, whose revolution cycle is d days, assuming that an individual from this planet was born on any day of the year with equal  probability, use $P(n,d)$  to denote the probability that at least two persons of a set of n people from such a planet has the same birthday.
+
+In a group of n people, starting with an arbitrary person who was born on a certain day, the probability that a second person has a different birthday is $(d-1)/d$ . The probability that the third person who has a birthday different from the first two persons is $[(d-1)/d][(d-2)/d]$ . 
+
+Similarly, the probability that the n-th person $(n<d)$ has a different birthday from others' is
+$$
+\begin{aligned}
+\bar{P}(n,d) &= \frac{d-1}{d} \times \frac{d-2}{d}\times \cdots \times\frac{d-(n-1)}{d}\\ 
+&= \frac{d!}{(d-n)!d^n}  = \frac{P_{d,n}}{d^n}
+\end{aligned}
+$$
+where $P_{d,n}$ denotes the n-permutation of d.
+
+Therefore, for the case that a year has arbitrary days, the complementary probability that at least 2 persons from a group of size n $(n<d)$ share a same birthday is:
+$$
+P_(n,d)= 1-\bar{P}(n,d)=1- \frac{P_{d,n}}{d^n}
+$$
+
+## 2.2 Leap Year Case
+
+Consider the case that a special day (e.g. Feb. 29) does not exist in every year, the probability that one born in this special day is q.
+
+To calculate the coincident probability for a group of size n, divide the event into 2 cases:
+
+Case I:  the n persons were born on n different days other than the special day.
+
+Case II: the n persons were born on n different days, including one was born on the special day.
